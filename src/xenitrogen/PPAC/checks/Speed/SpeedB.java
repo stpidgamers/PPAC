@@ -12,7 +12,7 @@ public class SpeedB implements Listener {
     @EventHandler
     public void speedB(PlayerMoveEvent e){
         if (e.getPlayer().hasPotionEffect(PotionEffectType.SPEED) && e.getPlayer().getWalkSpeed() > playerData.MAX_XZ_SPEED){
-            Main.ban(e.getPlayer(), "&cPPAC &4CHEAT &cDETECTION ");
+            Main.ban(e.getPlayer(), "&cPPAC &4CHEAT &cDETECTION  ");
         }
     }
 }
