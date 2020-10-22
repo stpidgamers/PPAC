@@ -4,6 +4,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
+    public static String ez;
 
     @Override
     public void onEnable() {
@@ -16,6 +17,7 @@ public class Main extends JavaPlugin {
     }
 
     public static void ban(Player p, String reason){
+        ez = reason;
         p.kickPlayer("&cYou Have Been &4Banned! &cReason : \n\n" + reason);
         p.setBanned(true);
     }
