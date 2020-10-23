@@ -1,5 +1,9 @@
 package xenitrogen.PPAC.checks.Speed;
 
+import net.minecraft.server.v1_8_R3.Packet;
+import net.minecraft.server.v1_8_R3.PacketPlayInUseEntity;
+import org.bukkit.GameMode;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
@@ -9,9 +13,15 @@ import xenitrogen.PPAC.playerData;
 
 public class SpeedB implements Listener {
 
+    public double threshold = 1.0D;
+    public int violations = 0;
+
     @EventHandler
     public void speedB(PlayerMoveEvent e){
-        if (e.getPlayer().hasPotionEffect(PotionEffectType.SPEED) && e.getPlayer().getWalkSpeed() > playerData.MAX_XZ_SPEED){
+        Player p = e.getPlayer();
+
+
+        if (e.getFrom().distanceSquared(e.getTo()) > 0.8 && (p.getGameMode() != GameMode.CREATIVE)){
             Main.ban(e.getPlayer(), "&cPPAC &4CHEAT &cDETECTION  ");
         }
     }
