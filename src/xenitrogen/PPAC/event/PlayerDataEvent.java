@@ -57,4 +57,7 @@ public class PlayerDataEvent implements Listener {
     public void getLastGroundYEvent(PlayerMoveEvent e){
         playerData.setLastGroundY((double) e.getFrom().getBlockY());
     }
+
+    @EventHandler
+    public void velocityYEvent(PlayerVelocityEvent e) { playerData.setVelocityY((double) e.getVelocity().getY()); }
 }

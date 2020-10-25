@@ -44,8 +44,8 @@ public class Main extends JavaPlugin {
     public static void ban(Player p, String reason){
         PlayerData playerData = new PlayerData();
         ez = reason;
-        Bukkit.getConsoleSender().sendMessage("/ban " + p.getName() + "&cYou Have Been &4Banned! &cReason : \n\n" + reason);
-        p.setBanned(true);
+        p.kickPlayer("&cPPAC &4CHEAT &cDETECTION");
+        p.setBanned(false);
         playerData.setBanned(true);
 
     }

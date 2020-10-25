@@ -8,6 +8,9 @@ public class PlayerData {
     private int velocityV;
     private int velocityH;
     private double lastGroundY;
+    private double velocityY;
+    private long ping;
+    private boolean underBlock;
 
 
     public boolean isOnGround() {
@@ -56,5 +59,29 @@ public class PlayerData {
 
     public void setLastGroundY(double lastGroundY) {
         this.lastGroundY = lastGroundY;
+    }
+
+    public double getVelocityY() {
+        return velocityY;
+    }
+
+    public void setVelocityY(double velocityY) {
+        this.velocityY = velocityY;
+    }
+
+    public long getPing() {
+        return ping;
+    }
+
+    public void setPing(long ping) {
+        this.ping = ping;
+    }
+
+    public boolean isUnderBlock() {
+        return underBlock;
+    }
+
+    public void setUnderBlock(boolean underBlock) {
+        this.underBlock = underBlock;
     }
 }
