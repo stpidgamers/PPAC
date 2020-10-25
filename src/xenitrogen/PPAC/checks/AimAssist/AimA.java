@@ -20,7 +20,7 @@ public class AimA implements Listener {
 
         if (yawChange > 0.0f && (double)yawChange < 0.01 && (double)pitchChange > 0.2) {
             vl++;
-            p.sendMessage(" (Experimental) AimA Detection yawChange = " + yawChange + " pitchChange = " + pitchChange);
+            e.getPlayer().sendMessage("(Experimental) " + e.getPlayer().getName() + " has failed AimA");
 
 
             "".length();

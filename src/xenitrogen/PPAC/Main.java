@@ -10,6 +10,7 @@ import xenitrogen.PPAC.checks.Speed.*;
 import xenitrogen.PPAC.checks.AimAssist.*;
 import xenitrogen.PPAC.checks.Fly.*;
 import xenitrogen.PPAC.checks.Reach.*;
+import xenitrogen.PPAC.event.PlayerDataEvent;
 
 
 public class Main extends JavaPlugin {
@@ -26,7 +27,10 @@ public class Main extends JavaPlugin {
         pm.registerEvents((Listener)new AimB(), (Plugin)this);
         pm.registerEvents((Listener)new AimC(), (Plugin)this);
         pm.registerEvents((Listener)new FlyA(), (Plugin)this);
+        pm.registerEvents((Listener)new FlyB(), (Plugin)this);
         pm.registerEvents((Listener)new ReachA(), (Plugin)this);
+        pm.registerEvents((Listener)new PlayerDataEvent(), (Plugin)this);
+
 
         getLogger().info("[!] Registered All Checks!");
     }
@@ -38,8 +42,11 @@ public class Main extends JavaPlugin {
     }
 
     public static void ban(Player p, String reason){
+        PlayerData playerData = new PlayerData();
         ez = reason;
         Bukkit.getConsoleSender().sendMessage("/ban " + p.getName() + "&cYou Have Been &4Banned! &cReason : \n\n" + reason);
         p.setBanned(true);
+        playerData.setBanned(true);
+
     }
 }

@@ -16,7 +16,7 @@ public class AimB implements Listener {
         if (diff > 1.0f && Math.round(diff * 10.0f) * 0.1f == diff && Math.round(diff) != diff) {
             if (diff == this.suspiciousYaw) {
                 vl++;
-                event.getPlayer().sendMessage("(Experimental) AimB Detection yawChange = " + Math.abs(event.getTo().getYaw() - event.getFrom().getYaw()) % 360.0f + " suspiciousYaw = " + suspiciousYaw);
+                event.getPlayer().sendMessage("(Experimental) " + event.getPlayer().getName() + " has failed AimB");
             }
             this.suspiciousYaw = Math.round(diff * 10.0f) * 0.1f;
         }

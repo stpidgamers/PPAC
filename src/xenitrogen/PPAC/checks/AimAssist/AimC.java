@@ -14,7 +14,7 @@ public class AimC implements Listener {
         final double diff = MathUtil.getDistanceBetweenAngles(event.getTo().getYaw(), event.getFrom().getYaw());
         if (event.getFrom().getPitch() == event.getTo().getPitch() && diff >= 3.0 && event.getFrom().getPitch() != 90.0f && event.getTo().getPitch() != 90.0f) {
             vl++;
-            event.getPlayer().sendMessage("(Experimental) AimC Detection Has Been Failed On " + event.getPlayer().getName().toLowerCase());
+            event.getPlayer().sendMessage("(Experimental) " + event.getPlayer().getName() + " has failed AimC");
         }
     }
 }
