@@ -6,8 +6,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import xenitrogen.PPAC.checks.Speed.SpeedA;
-import xenitrogen.PPAC.checks.Speed.SpeedB;
+import xenitrogen.PPAC.checks.Speed.*;
+import xenitrogen.PPAC.checks.AimAssist.*;
+import xenitrogen.PPAC.checks.Fly.*;
+import xenitrogen.PPAC.checks.Reach.*;
+
 
 public class Main extends JavaPlugin {
     public static String ez;
@@ -19,6 +22,12 @@ public class Main extends JavaPlugin {
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents((Listener)new SpeedA(), (Plugin)this);
         pm.registerEvents((Listener)new SpeedB(), (Plugin)this);
+        pm.registerEvents((Listener)new AimA(), (Plugin)this);
+        pm.registerEvents((Listener)new AimB(), (Plugin)this);
+        pm.registerEvents((Listener)new AimC(), (Plugin)this);
+        pm.registerEvents((Listener)new FlyA(), (Plugin)this);
+        pm.registerEvents((Listener)new ReachA(), (Plugin)this);
+
         getLogger().info("[!] Registered All Checks!");
     }
 

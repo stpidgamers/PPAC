@@ -9,7 +9,7 @@ import xenitrogen.PPAC.Main;
 
 public class AimA implements Listener {
 
-    public int violations = 0;
+    public int vl = 0;
 
     @EventHandler
     public void aim(PlayerMoveEvent e){
@@ -19,14 +19,16 @@ public class AimA implements Listener {
         float pitchChange = Math.abs(e.getTo().getPitch() - e.getFrom().getPitch());
 
         if (yawChange > 0.0f && (double)yawChange < 0.01 && (double)pitchChange > 0.2) {
-            violations++;
+            vl++;
+            p.sendMessage(" (Experimental) AimA Detection yawChange = " + yawChange + " pitchChange = " + pitchChange);
+
 
             "".length();
             if (3 == 1) {
                 throw null;
             }
         }
-        if (violations > 5){
+        if (vl > 5){
             Main.ban(p, "&cPPAC &4CHEAT &cDETECTION");
         }
     }

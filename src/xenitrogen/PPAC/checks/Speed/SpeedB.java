@@ -14,7 +14,7 @@ import xenitrogen.PPAC.playerData;
 public class SpeedB implements Listener {
 
     public double threshold = 1.0D;
-    public int violations = 0;
+    public int vl = 0;
 
     @EventHandler
     public void speedB(PlayerMoveEvent e){
@@ -22,6 +22,9 @@ public class SpeedB implements Listener {
 
 
         if (e.getFrom().distanceSquared(e.getTo()) > 0.8 && (p.getGameMode() != GameMode.CREATIVE)){
+            vl++;
+        }
+        if (vl > 5){
             Main.ban(e.getPlayer(), "&cPPAC &4CHEAT &cDETECTION  ");
         }
     }

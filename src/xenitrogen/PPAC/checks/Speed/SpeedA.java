@@ -9,7 +9,7 @@ import xenitrogen.PPAC.Main;
 import xenitrogen.PPAC.playerData;
 
 public class SpeedA implements Listener {
-    public int violations = 0;
+    public int vl = 0;
 
     @EventHandler
     public void speedA(PlayerMoveEvent e){
@@ -19,12 +19,12 @@ public class SpeedA implements Listener {
         if (e.getFrom().getDirection().getX() > playerData.MAX_XZ_SPEED && !p.isSprinting() && !p.isOp() && p.isOnGround()){
             if (angle > 47.5D) {
                 if (!p.hasPotionEffect(PotionEffectType.SPEED)){
-                    violations++;
+                    vl++;
                 }
             }
 
         }
-        if (violations > 5){
+        if (vl > 5){
             Main.ban(p, "&cPPAC &4CHEAT &cDETECTION");
         }
     }
